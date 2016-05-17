@@ -59,6 +59,22 @@ if ( class_exists( 'WP_OSA_CTV' ) ) {
 		)
     );
 
+    // Current theme.
+    $ctv_theme = wp_get_theme();
+    $ctv_theme_content  = '<h3>Current Theme</h3>';
+    $ctv_theme_content .= '<p><strong>Name:</strong> <code>' . $ctv_theme->get( 'Name' ) . ' </code></p>';
+    $ctv_theme_content .= '<p><strong>Version:</strong> <code>' . $ctv_theme->get( 'Version' ) . ' </code></p>';
+
+    // Shortcode Field.
+	$wposa_obj->add_field(
+		'ctv_settings',
+		array(
+			'id'      => 'theme_info',
+			'type'    => 'html',
+			'desc'    => $ctv_theme_content,
+		)
+	);
+
     // Previous Version.
 	$wposa_obj->add_field(
 		'ctv_settings',
@@ -66,8 +82,8 @@ if ( class_exists( 'WP_OSA_CTV' ) ) {
 			'id'      => 'ctv_old_ver',
 			'type'    => 'text',
 			'name'    => __( 'Current Version (Required)', 'CTV' ),
-			'desc'    => __( 'What is the current version?', 'CTV' ),
-			'default' => '1.0.0.1'
+			'desc'    => __( 'Copy the current version from above theme info!', 'CTV' ),
+			'default' => $ctv_theme->get( 'Version' )
 		)
 	);
 
