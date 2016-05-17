@@ -61,7 +61,7 @@ if ( class_exists( 'WP_OSA_CTV' ) ) {
 
     // Current theme.
     $ctv_theme = wp_get_theme();
-    $ctv_theme_content  = '<h3>Current Theme</h3>';
+    $ctv_theme_content  = '<h4>Current Theme</h4>';
     $ctv_theme_content .= '<p><strong>Name:</strong> <code>' . $ctv_theme->get( 'Name' ) . ' </code></p>';
     $ctv_theme_content .= '<p><strong>Version:</strong> <code>' . $ctv_theme->get( 'Version' ) . ' </code></p>';
 
