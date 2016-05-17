@@ -1,15 +1,18 @@
 <?php
 /**
  * Plugin Name: Change Theme Version
- * Plugin URI: http://AhmadAwais . com/
+ * Plugin URI: http://AhmadAwais.com/
  * Description: Change the theme version programatically .
  * Author: mrahmadawais, WPTie
- * Author URI: http://AhmadAwais . com/
+ * Author URI: http://AhmadAwais.com/
  * Version: 1.0.0
  * License: GPL2+
- * License URI: http://www . gnu . org/licenses/gpl-2 . 0 . txt
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  *
  * @package CTV
+ *
+ * GitHub Plugin URI: https://github.com/ahmadawais/Change-Theme-Version/
+ * GitHub Branch:     master
  */
 
 // Exit if accessed directly .
@@ -20,11 +23,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Define global constants .
  *
- * @since 1 . 0 . 0
+ * @since 1.0.0
  */
 // Plugin version .
 if ( ! defined( 'CTV_VERSION' ) ) {
-    define( 'CTV_VERSION', '1 . 0 . 0' );
+    define( 'CTV_VERSION', '1.0.0' );
 }
 
 if ( ! defined( 'CTV_NAME' ) ) {
@@ -32,11 +35,11 @@ if ( ! defined( 'CTV_NAME' ) ) {
 }
 
 if ( ! defined('CTV_DIR' ) ) {
-    define( 'CTV_DIR', WP_PLUGIN_DIR  .  '/'  .  CTV_NAME );
+    define( 'CTV_DIR', WP_PLUGIN_DIR . '/' . CTV_NAME );
 }
 
 if ( ! defined('CTV_URL' ) ) {
-    define( 'CTV_URL', WP_PLUGIN_URL  .  '/'  .  CTV_NAME );
+    define( 'CTV_URL', WP_PLUGIN_URL . '/' . CTV_NAME );
 }
 
 /**
@@ -44,8 +47,8 @@ if ( ! defined('CTV_URL' ) ) {
  *
  * @since 1.0.0
  */
-if ( file_exists( CTV_DIR . '/wposa/wposa-init.php' ) ) {
-    require_once( CTV_DIR . '/wposa/wposa-init.php' );
+if ( file_exists( CTV_DIR.'/wposa/wposa-init.php' ) ) {
+    require_once( CTV_DIR.'/wposa/wposa-init.php' );
 }
 
 if ( ! function_exists( 'ctv_replace_in_file' ) ) {
@@ -87,7 +90,7 @@ if ( ! function_exists( 'ctv_replace_in_file' ) ) {
 }
 
 // Theme path.
-$ctv_theme_path = get_template_directory() . '/style.css';
+$ctv_theme_path = get_template_directory().'/style.css';
 
 // CTV Settings.
 $ctv_settings = get_option( 'ctv_settings' );
